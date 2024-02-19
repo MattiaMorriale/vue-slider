@@ -60,6 +60,16 @@ createApp({
 
             this.activeSlides = index;
 
+        },
+        timer() {
+            setInterval(() => {
+                
+                this.nextSlide()
+
+            }, 3000);
         }
-    }
+    },
+    mounted() {
+        this.timer()
+    },
   }).mount('#app')
