@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slider</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- style -->
     <link rel="stylesheet" href="./css/style.css" />
 </head>
 
@@ -13,34 +18,48 @@
 
     <div id="app">
 
-        <div class="container">
-            <div class="slider-wrapper" tabindex="0" v-on:mouseover="stopTimer" v-on:mouseleave="timer">
+        <div class="container-fluid ">
+            <div class="row mt-4 ">
+                <i class="fa-brands fa-steam text-center" style="color: #a1a1a1;" id="logo"><h1 class="d-inline mx-3 align-middle text">Speam</h1></i>
+            </div>
+            <div class="row mt-5 ">
 
-                <div class="item" v-for="(slides, index) in slides" :key="slides" v-show="index == activeSlides">
-                    <img :src="slides.image" :alt="slides.title"/>
-                    <div class="text">
-                        <h3>{{slides.title}}</h3>
-                        <p>
-                          {{slides.text}}  
-                        </p>
+                <div class="col-12 slider-wrapper d-flex justify-content-center " tabindex="0" v-on:mouseover="stopTimer" v-on:mouseleave="timer">
+    
+                    <div class="col-10 item" v-for="(slides, index) in slides" :key="slides" v-show="index == activeSlides">
+                        <img :src="slides.image" :alt="slides.title"/>
+                        <div class="text">
+                            <h3>{{slides.title}}</h3>
+                            <p>
+                              {{slides.text}}  
+                            </p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="thumbs">
-                    <div class="prev" @click="prevSlide"></div>
-                    <div class="next" @click="nextSlide"></div>
-                    <div class="thumb" :class="index == activeSlides ? 'active' : '' " v-for="(slides, index) in slides" @click="choseThumb(index)">
-                        <img  :src="slides.image" :alt="slides.title" />
+    
+                    <div class="col-2 thumbs">
+                        <div class="prev" @click="prevSlide"></div>
+                        <div class="next" @click="nextSlide"></div>
+                        <div class="thumb" :class="index == activeSlides ? 'active' : '' " v-for="(slides, index) in slides" @click="choseThumb(index)">
+                            <img  :src="slides.image" :alt="slides.title" />
+                        </div>
                     </div>
+    
                 </div>
-
             </div>
         </div>
 
     </div>
 
+    <!-- font-awesome -->
+    <script src="https://kit.fontawesome.com/1a036a6099.js" crossorigin="anonymous"></script>
+
+    <!-- bootscript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- script Js and Vue -->
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="./js/script.js"></script>
+
 </body>
 
 </html>

@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: #1E3050;
+}
+
+#logo{
+    font-size: 60px;
+}
+
 .container {
     height: 100vh;
     display: flex;
