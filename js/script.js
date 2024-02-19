@@ -62,14 +62,24 @@ createApp({
 
         },
         timer() {
-            setInterval(() => {
+
+            this.timerslide = setInterval(() => {
                 
                 this.nextSlide()
 
             }, 3000);
+            
+        },
+        stopTimer() {
+
+            clearInterval(this.timerslide);
+
         }
+
     },
     mounted() {
-        this.timer()
+        
+        this.timer();
+    
     },
   }).mount('#app')
