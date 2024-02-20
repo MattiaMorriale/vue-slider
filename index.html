@@ -27,7 +27,7 @@
                 <div class="col-12 slider-wrapper d-flex justify-content-center " tabindex="0" v-on:mouseover="stopTimer" v-on:mouseleave="timer">
     
                     <div class="col-10 item" v-for="(slides, index) in slides" :key="slides" v-show="index == activeSlides">
-                        <img :src="slides.image" :alt="slides.title"/>
+                        <img :src="slides.image" :alt="slides.title" />
                         <div class="text">
                             <h3>{{slides.title}}</h3>
                             <p>
@@ -49,6 +49,8 @@
         </div>
 
     </div>
+  
+  
 
     <!-- font-awesome -->
     <script src="https://kit.fontawesome.com/1a036a6099.js" crossorigin="anonymous"></script>
